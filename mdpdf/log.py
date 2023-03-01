@@ -12,7 +12,7 @@ SHORTFORMAT = "%(message)s"
 getLogger("").setLevel(DEBUG)
 
 
-def init(filename=Path("mdpdf.log")):
+def init(filename=Path("/tmp/mdpdf.log")):
     filehandler = FileHandler(filename, mode="w", encoding="utf-8")
     filehandler.setLevel(DEBUG)
     filehandler.setFormatter(Formatter(LONGFORMAT))
