@@ -353,18 +353,18 @@ class PdfRenderer:
 
     def code_block(self, node, entering):
         if entering:
-            style.push(fontname=font.COURIER)
+            style.push(fontname=font.COURIER, fontsize=8)
             self.crHalfLine("codehalf+")
-            self.indent += 32
-            self.insertPoint.x += 32
+            self.indent += 16
+            self.insertPoint.x += 16
             for line in node.literal.split("\n"):
                 if len(line):
                     self.printLine(line)
                     self.cr("")
 
             # else: # doesn't get called with entering = False?
-            self.indent -= 32
-            self.insertPoint.x -= 32
+            self.indent -= 16
+            self.insertPoint.x -= 16
             self.crHalfLine("codehalf-")
             style.pop()
 
